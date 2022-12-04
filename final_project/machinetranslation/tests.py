@@ -8,28 +8,46 @@ class TestFrenchToEnglish(unittest.TestCase):
     """
         Class with unit test for translator.frenchToEnglish
     """
-    def test1(self):
+    def test_frenchToEnglish_assertEqual(self):
         """
-            First unit test
+            Test for the translation of the word ‘Bonjour’ and ‘Hello’.
         """
-        # Test for null input for frenchToEnglish
+        self.assertEqual(frenchToEnglish('Bonjour'), 'Hello')
+
+    def test_frenchToEnglish_assertEqual_None(self):
+        """
+            # Test for null input for frenchToEnglish
+        """                
         self.assertEqual(frenchToEnglish(None), None)
 
-        # Test for the translation of the world ‘Bonjour’ and ‘Hello’.
-        self.assertEqual(frenchToEnglish('Bonjour'), 'Hello')
+    def test_frenchToEnglish_assertNotEqual(self):
+        """
+            # Test for the translation of the world ‘Bonjour’ and ‘Good bye’.
+        """        
+        self.assertNotEqual(frenchToEnglish('Bonjour'), 'Good bye')
+
 
 class TestEnglishToFrench(unittest.TestCase):
     """
         Class with unit test for translator.englishToFrench
     """
-    def test1(self):
+    def test_englishToFrench_assertEqual(self):
         """
-            First unit test
+            # Test for the translation of the world ‘Hello’ and ‘Bonjour’
+        """        
+        self.assertEqual(englishToFrench('Hello'), 'Bonjour')
+
+    def test_englishToFrench_assertEqual_None(self):
         """
-        # Test for null input for englishToFrench
+            # Test for null input for englishToFrench
+        """        
         self.assertEqual(englishToFrench(None), None)
 
-        # Test for the translation of the world ‘Hello’ and ‘Bonjour’
-        self.assertEqual(englishToFrench('Hello'), 'Bonjour')
+    def test_englishToFrench_assertNotEqual(self):
+        """
+            # Test for the translation of the world ‘Hello’ and ‘Au revoir’.
+        """        
+        self.assertNotEqual(frenchToEnglish('Hello'), 'Au revoir')
+
 
 unittest.main()
